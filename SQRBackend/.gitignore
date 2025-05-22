@@ -1,0 +1,7 @@
+cat <<EOL > SQRBackend/.gitignore
+# .NET
+bin/
+obj/
+*.csproj.user
+*.log
+EOL

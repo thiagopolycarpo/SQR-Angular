@@ -1,0 +1,60 @@
+<div class="container">
+  <h2>SQR Production Entry</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required>
+      <mat-error *ngIf="form.get('email')?.hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="form.get('email')?.hasError('email')">Invalid email</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Order</mat-label>
+      <mat-select formControlName="orderId" (selectionChange)="onOrderChange()" required>
+        <mat-option *ngFor="let order of orders" [value]="order.order">{{ order.order }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('orderId')?.hasError('required')">Order is required</mat-error>
+    </mat-form-field>
+
+    <div *ngIf="selectedOrder" class="product-details">
+      <h3>Product: {{ selectedOrder.productDescription }}</h3>
+      <img [src]="selectedOrder.image" alt="Product Image" style="max-width: 200px;">
+    </div>
+
+    <mat-form-field>
+      <mat-label>Production Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="productionDate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="form.get('productionDate')?.hasError('required')">Date is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Quantity</mat-label>
+      <input matInput type="number" formControlName="quantity" required>
+      <mat-error *ngIf="form.get('quantity')?.hasError('required')">Quantity is required</mat-error>
+      <mat-error *ngIf="form.get('quantity')?.hasError('min')">Quantity must be greater than 0</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Material</mat-label>
+      <mat-select formControlName="materialCode" required>
+        <mat-option *ngFor="let material of selectedOrder?.materials" [value]="material.materialCode">
+          {{ material.materialDescription }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('materialCode')?.hasError('required')">Material is required</mat-error>
+    </mat-form-field>
+
+    <div>
+      <p>Calculated Cycle Time: {{ calculatedCycleTime | number:'1.1-1' }} seconds</p>
+      <p *ngIf="selectedOrder">Required Cycle Time: {{ selectedOrder.cycleTime }} seconds</p>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!isSubmitEnabled()">Submit</button></form>
+    
+
+  <div *ngIf="responseMessage" [ngClass]="{'success': responseType === 'S', 'error': responseType === 'E'}">
+    {{ responseMessage }}
+  </div>
+</div>

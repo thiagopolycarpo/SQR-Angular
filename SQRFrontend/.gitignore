@@ -1,0 +1,7 @@
+cat <<EOL > SQRFrontend/.gitignore
+# Angular
+node_modules/
+dist/
+.angular/
+*.log
+EOL

@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Production Records</h2>
+  <table mat-table [dataSource]="productions" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let production">{{ production.id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="order">
+      <th mat-header-cell *matHeaderCellDef>Order</th>
+      <td mat-cell *matCellDef="let production">{{ production.order }}</td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let production">{{ production.date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef>Quantity</th>
+      <td mat-cell *matCellDef="let production">{{ production.quantity }}</td>
+    </ng-container>
+    <ng-container matColumnDef="materialCode">
+      <th mat-header-cell *matHeaderCellDef>Material Code</th>
+      <td mat-cell *matCellDef="let production">{{ production.materialCode }}</td>
+    </ng-container>
+    <ng-container matColumnDef="cycleTime">
+      <th mat-header-cell *matHeaderCellDef>Cycle Time (s)</th>
+      <td mat-cell *matCellDef="let production">{{ production.cycleTime }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
