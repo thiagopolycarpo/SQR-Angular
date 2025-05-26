@@ -1,0 +1,75 @@
+.production-form {
+     max-width: 600px;
+     margin: 20px auto;
+     padding: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+
+   .production-form h2 {
+     text-align: center;
+   }
+
+   .production-form form {
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+     width: 100%;
+   }
+
+   .production-form label {
+     font-weight: bold;
+   }
+
+   .production-form input,
+   .production-form select {
+     padding: 8px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     width: 100%;
+   }
+
+   .production-form button {
+     padding: 10px;
+     background-color: #007bff;
+     color: white;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     align-self: center;
+   }
+
+   .production-form button:disabled {
+     background-color: #ccc;
+     cursor: not-allowed;
+   }
+
+   .order-details {
+     margin: 10px 0;
+     text-align: center;
+   }
+
+   .product-image {
+     max-width: 100px;
+     height: auto;
+   }
+
+   .response {
+     margin-top: 20px;
+     padding: 10px;
+     border-radius: 4px;
+     text-align: center;
+   }
+
+   .response.success {
+     background-color: #d4edda;
+     color: #155724;
+   }
+
+   .response.error {
+     background-color: #f8d7da;
+     color: #721c24;
+   }

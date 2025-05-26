@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+sqr.db
+*.log
+npm-debug.log
+.DS_Store
+SQRBackend/bin/
+SQRBackend/obj/

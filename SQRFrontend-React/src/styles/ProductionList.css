@@ -1,0 +1,35 @@
+.production-list {
+     max-width: 600px;
+     margin: 20px auto;
+     padding: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+   }
+
+   .production-list h2 {
+     text-align: center;
+   }
+
+   .production-list table {
+     width: 100%;
+     border-collapse: collapse;
+   }
+
+   .production-list th,
+   .production-list td {
+     border: 1px solid #ccc;
+     padding: 8px;
+     text-align: left;
+   }
+
+   .production-list th {
+     background-color: #f4f4f4;
+   }
+
+   .production-list .error {
+     color: #721c24;
+     background-color: #f8d7da;
+     padding: 10px;
+     border-radius: 4px;
+     text-align: center;
+   }
