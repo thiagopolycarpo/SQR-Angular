@@ -5,6 +5,7 @@ A production tracking application with an Angular frontend and .NET backend, bui
 ## Structure
 - \`SQRFrontend/\`: Angular 14 frontend with production entry form and records display.
 - \`SQRBackend/\`: .NET backend with SQLite database (\`sqr.db\`) and API endpoints.
+- \`SQRFrontend-React/\`: React frontend (TypeScript, Vite) for the SQR system.
 
 ## Setup
 ### Prerequisites
